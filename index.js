@@ -17,4 +17,26 @@ const calculator = {
     multiply: (n1, n2) => n1 * n2,
 };
 
-export { capitalize, reverse, calculator };
+function caesarCipher(string, shiftFactor) {
+    const alphabet = " .,?!abcdefghijklmnopqrstuvwxyz";
+    const encryptedArr = [];
+    for (let character of string) {
+        encryptedArr.push(shiftCharacter(alphabet, character, shiftFactor));
+    }
+    return encryptedArr.join("");
+}
+
+function shiftCharacter(alphabet, letter, shiftFactor) {
+    let newIndex = null;
+    if (letter.match(/[a-zA-z]/) && letter === letter.toUpperCase()) {
+        newIndex =
+            (alphabet.indexOf(letter.toLowerCase()) + shiftFactor) %
+            alphabet.length;
+        return alphabet[newIndex].toUpperCase();
+    } else {
+        newIndex = (alphabet.indexOf(letter) + shiftFactor) % alphabet.length;
+        return alphabet[newIndex];
+    }
+}
+
+export { capitalize, reverse, calculator, caesarCipher };

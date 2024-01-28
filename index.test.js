@@ -1,4 +1,4 @@
-import { capitalize, reverse, calculator } from "./index";
+import { capitalize, reverse, calculator, caesarCipher } from "./index";
 
 it("Should capitalize string", () => {
     expect(capitalize("hello world")).toBe("Hello world");
@@ -24,4 +24,13 @@ it("Should divide 10 / 2 and be equal to 5", () => {
 
 it("Should add 2 * 4 and be equal to 8", () => {
     expect(calculator.multiply(2, 4)).toBe(8);
+});
+
+it("Should return correct encrypted message", () => {
+    expect(caesarCipher("hello world", 5)).toBe("mjqqta.twqi");
+    expect(caesarCipher("abcde", 8)).toBe("ijklm");
+    expect(caesarCipher("FIZZ BUZZ", 10)).toBe("PSEEfL!EE");
+    expect(caesarCipher("the odin project? No way!, I love it.", 10)).toBe(
+        "?rofynsxfz.ytom?ifXyfbkdjhfSfvyaofs?g"
+    );
 });
