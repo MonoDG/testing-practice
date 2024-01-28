@@ -10,4 +10,11 @@ function reverse(string) {
     return reversedString.join("");
 }
 
-export { capitalize, reverse };
+const calculator = {
+    add: (n1, n2) => n1 + n2,
+    substract: (n1, n2) => n1 - n2,
+    divide: (n1, n2) => n1 / n2,
+    multiply: (n1, n2) => n1 * n2,
+};
+
+export { capitalize, reverse, calculator };
