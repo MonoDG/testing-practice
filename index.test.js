@@ -1,4 +1,10 @@
-import { capitalize, reverse, calculator, caesarCipher } from "./index";
+import {
+    capitalize,
+    reverse,
+    calculator,
+    caesarCipher,
+    analyzeArray,
+} from "./index";
 
 it("Should capitalize string", () => {
     expect(capitalize("hello world")).toBe("Hello world");
@@ -33,4 +39,14 @@ it("Should return correct encrypted message", () => {
     expect(caesarCipher("the odin project? No way!, I love it.", 10)).toBe(
         "?rofynsxfz.ytom?ifXyfbkdjhfSfvyaofs?g"
     );
+});
+
+it("Should return object with expected properties", () => {
+    const expectedObject = {
+        average: 4,
+        min: 1,
+        max: 8,
+        length: 6,
+    };
+    expect(analyzeArray([1, 8, 3, 4, 2, 6])).toEqual(expectedObject);
 });

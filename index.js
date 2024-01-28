@@ -39,4 +39,13 @@ function shiftCharacter(alphabet, letter, shiftFactor) {
     }
 }
 
-export { capitalize, reverse, calculator, caesarCipher };
+function analyzeArray(array) {
+    return {
+        average: array.reduce((prev, curr) => prev + curr) / array.length,
+        min: array.reduce((prev, curr) => Math.min(prev, curr)),
+        max: array.reduce((prev, curr) => Math.max(prev, curr)),
+        length: array.length,
+    };
+}
+
+export { capitalize, reverse, calculator, caesarCipher, analyzeArray };
